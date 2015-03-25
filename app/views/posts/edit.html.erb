@@ -1,0 +1,21 @@
+<h1> Edit post </h1>
+
+<%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
+	<h2> Error: Post en blanco o titulo con menos de dos caracteres </h2>
+  <% end %>
+  <p>
+	<%= f.label :title %><br />
+	<%= f.text_field :title %>
+</p>
+
+<p>
+	<%= f.label :content %><br />
+	<%= f.text_area :content %>
+</p>
+
+<p>
+	<%= f.submit "Edit the post" %>
+	<%= link_to "Back", :back %>
+</p>
+<% end %>
